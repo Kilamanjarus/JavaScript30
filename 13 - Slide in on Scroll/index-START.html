@@ -158,11 +158,11 @@
         timeout = setTimeout(later, wait);
         if (callNow) func.apply(context, args);
       };
-    };
+    }
 
-    const sliderImages = document.querySelectorAll('.slide-in');
+    const sliderImages = document.querySelectorAll(`.slide-in`);
 
-    function checkSlide() {
+    function checkSlide(e) {
       sliderImages.forEach(sliderImage => {
         // half way through the image
         const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
@@ -175,11 +175,10 @@
         } else {
           sliderImage.classList.remove('active');
         }
-      });
+      })
     }
 
     window.addEventListener('scroll', debounce(checkSlide));
-
   </script>
 
   <style>
